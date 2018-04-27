@@ -3,7 +3,10 @@
   <header class="page-header">
     <h1>My Cart</h1>
   </header>
-
+  <% if @cart.present? == false %>
+    <h3><%= link_to 'Your Cart Is Empty Please Return Home', '/' %></h3>
+    <img src="uploads/empty_cart.png" />
+  <% else %>
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
@@ -49,5 +52,6 @@
       <% end %>
     </div>
   </div>
+  <% end %>
 
 </section>
