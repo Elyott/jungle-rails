@@ -134,3 +134,16 @@ cat3.products.create!({
 
 
 puts "DONE!"
+
+## Ratings
+User.create(
+  id: 1,
+  name: 'Bob',
+  email: 'bob@bob.bob',
+  password: 'bob')
+
+
+reviews = Review.create!([
+  {product_id: 2, user_id: 1, description: "Cool product!", rating: 5},
+  {product_id: 4, user_id: 1, description: "It broke right away!", rating: 2},
+  {product_id: 3, user_id: 1, description: "I'm sad it doesn't come in red.", rating: 3}])

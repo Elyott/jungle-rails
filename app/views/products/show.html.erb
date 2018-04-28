@@ -7,11 +7,9 @@
   <article class="product-detail">
 
     <div class="row">
-
       <div class="col-sm-4">
         <%= image_tag @product.image.url, class: 'main-img' %>
       </div>
-
       <div class="col-sm-8">
         <dl class="dl-horizontal">
           <dt>Name</dt>
@@ -25,7 +23,35 @@
         </dl>
       </div>
     </div>
-
+    <div class="jumbotron">
+      <h2 class="display-4">Ratings </h2>
+      <hr class="my-4">
+      <% if current_user %>
+        <h4>Hey <%= current_user.name %>, please leave a review!</h4>
+        <%= form_for [@product, @review] do |f| %>
+          <table class="table">
+            <thead>
+              <tr>
+                <th><%= f.label :description %> <%= f.text_area :description %></th>
+                <th><%= f.label :rating %> <%= f.select(:rating, options_for_select(1..5)) %></th>
+                <th><button class="btn btn-primary btn-lg" role="submit">Leave A Rating</button></th>
+              </tr>
+            </thead>
+          </table>
+        <% end %>
+      <% end %>
+      <table class="table">
+        <tr>
+          <th>User:</th>
+          <th>Description:</th>
+          <th>Rating:</th>
+          <th></th>
+        </tr>
+        <%  @product.reviews.reverse_each do |review| %>
+          <%= render 'review', review: review%>
+        <% end %>
+      </table>
+    </div>
   </article>
 
 </section>

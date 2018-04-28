@@ -1,0 +1,10 @@
+<article class="review">
+  <tr>
+    <th><%= review.user.name %></th>
+    <th><%= review.description %></th>
+    <th><%= review.rating %></th>
+    <% if current_user == review.user %>
+      <th><%= link_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' } %></th>
+    <% end %>
+  </tr>
+</article>
