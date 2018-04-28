@@ -6,7 +6,7 @@ A mini e-commerce application built with Rails 4.2 for purposes of teaching Rail
 
 ![Homepage With Soldout Item](https://github.com/Elyott/jungle-rails/blob/master/docs/Screen%20Shot%202018-04-27%20at%206.29.27%20PM.png?raw=true)
 
-![Checkout Time](https://github.com/Elyott/jungle-rails/blob/master/docs/Screen%20Shot%202018-04-27%20at%206.32.22%20PM.png?raw=true
+![Checkout Time](https://github.com/Elyott/jungle-rails/blob/master/docs/Screen%20Shot%202018-04-27%20at%206.32.22%20PM.png?raw=true)
 
 ![Cool Products Page](https://github.com/Elyott/jungle-rails/blob/master/docs/Screen%20Shot%202018-04-27%20at%206.32.53%20PM.png?raw=true)
 
