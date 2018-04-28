@@ -16,7 +16,13 @@
       Details &raquo;
     <% end %>
   </footer>
-
+  <div class="rating">
+    <% if !product.reviews.average(:rating) %>
+      No Rating Yet, Be The First!
+    <% else %>
+      Overall Rating: <%= product.reviews.average(:rating).round(1) %>
+    <% end %>
+  </div>
   <aside class="price">
     <%= humanized_money_with_symbol product.price %>
   </aside>

@@ -27,18 +27,19 @@
       <h2 class="display-4">Ratings </h2>
       <hr class="my-4">
       <% if current_user %>
-        <h4>Hey <%= current_user.name %>, please leave a review!</h4>
+        <h4>Hey <%= current_user.name %>, please leave a review!
         <%= form_for [@product, @review] do |f| %>
           <table class="table">
             <thead>
               <tr>
                 <th><%= f.label :description %> <%= f.text_area :description %></th>
-                <th><%= f.label :rating %> <%= f.select(:rating, options_for_select(1..5)) %></th>
+                <th><%= f.label :rating %> <%= f.select(:rating, options_for_select([5, 4, 3, 2, 1])) %></th>
                 <th><button class="btn btn-primary btn-lg" role="submit">Leave A Rating</button></th>
               </tr>
             </thead>
           </table>
         <% end %>
+        </h4>
       <% end %>
       <table class="table">
         <tr>
